@@ -1,19 +1,131 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 200;
-    border-radius: 5px; /* 5px rounded corners */
-  }
-  
-  /* Add rounded corners to the top left and the top right corner of the image */
-  img {
-    border-radius: 5px 5px 0 0;
-    width: 200;
-     height: 300;
+    width: 300;
+    border-radius: 5px;
+    background-color: #f5f5f5; 
   }
 
-  .column{
-    column-count: 2;
-    column-gap: 10px;
-    column-rule-width: 1px;
+  img {
+    border-radius: 5px 5px 0 0;
+    width: 300;
+    height: 400;
   }
+
+  .gridItem{
+  padding: 20px;
+  }
+  
+  .grid{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .center{
+  margin: auto;
+  width: 68%;
+  padding: 10px;
+  }
+
+  .para{
+    font-size: 15px;
+    display: none;
+    overflow: hidden;
+  }
+
+  .like{
+    float: right;
+    position: relative;
+    bottom: 18px;
+    left: 22px;
+  }
+
+  #likebtn{
+   float: right;
+   position: relative;
+   height: 25px;
+   width: 25px;
+   border-radius: 50%;
+   border: none;
+   color: red;
+   bottom: 28px;
+   right: 2px;
+  }
+
+  .likeAnimation{
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    transform: scale(1);
+    animation: pulse 1s ;
+  }
+
+  .date{
+    float: left;
+    position: relative;
+    bottom: 18px;
+  }
+
+  .descbttn{
+    position: relative;
+    bottom: 20px;
+    left: 110px;
+    border: none;
+    border-radius: 20%;
+    padding: 5px;
+    background-color: rgb(212, 211, 212);
+    font-weight: bold;
+    font-family: "Times New Roman";
+  }
+
+  .header{
+    width: 100%;
+    height: 9%;
+    background-image: url("https://c.tenor.com/RJgdogvsjEsAAAAC/galaxie-galaxy.gif");
+  }
+
+  .title{
+    background-color: white;
+    color: black;
+    font-size: 4vw; 
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 10px;
+    width: 100%;
+    text-align: center; 
+    position: absolute; 
+    top: 5%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    mix-blend-mode: screen; 
+  }
+
+  .loader{
+    position: relative;
+    top: 45%;
+    left: 47%;
+  }
+
+  h3{
+    font-size: 18px;
+  }
+
+  body{
+    background-color: white;
+  }
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+  
