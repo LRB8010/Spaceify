@@ -3,10 +3,30 @@
     console.log(divLoader)
 //'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6'
 createLoader()
+// fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-01-01&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6")
+// .then(response =>{
+//     if(response.status >= 200 && response.status <= 299)
+//     {
+//         response.json();
+//     }else
+//     {
+//         alert(`Please refresh or comeback later, NASA API down!!! ${response.statusText}`)
+//     }
+// })
+// .then( data =>{
+//     console.log(data)
+// })
 
 fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-01-01&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6")
 .then(response =>{
-    return response.json();
+    if(response.status >= 200 && response.status <= 299)
+    {
+        return response.json();
+    }
+    else
+    {
+        alert(`Please refresh or comeback later, NASA API down!!! ${response.statusText}`)
+    }
 })
 .then(data =>{
     hideLoader()
@@ -29,7 +49,7 @@ fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-0
         title.innerText = elem.title;
         date.innerText = `Date: ${elem.date}`
         descbutton.innerText = "Description"
-        br.innerText = "ㅤ"
+        br.innerText = "\n"
         likes.innerText = `${Math.floor(Math.random() * 10000)}`
         img.src = elem.hdurl;
         gridItem.className = "gridItem";
@@ -43,7 +63,6 @@ fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-0
         likebtn.dataset.clicked = "false"
         descbutton.addEventListener("click",showDescription)
         likebtn.addEventListener("click",function(event){likeIncrease(event)})
-        img.addEventListener("mouseover",function(e){createTags(e)})
         likebtn.append(icon)
         grid.append(gridItem)
         gridItem.append(card)
@@ -70,25 +89,23 @@ function likeIncrease(event){
     let numberLike = target.nextElementSibling
     console.log(target.dataset.clicked)
     if(target.dataset.clicked === "true" ){
-        console.log("Always")
         target.dataset.clicked = "false"
         target.className = "far fa-heart fa-xs"
         numberLike.innerText = parseInt(numberLike.innerText) - 1   
     }else{
         target.dataset.clicked = "true"
-            console.log("First")
         target.className = "fas fa-heart fa-xs likeAnimation"    
     numberLike.innerText = parseInt(numberLike.innerText) + 1
     }
 }
 
 
-function createTags(e){
-    console.log("Working")
-    let p = document.createElement("p")
-    p.innerText = "Hello"
-    e.target.append(p)
-}
+// function createTags(e){
+//     console.log("Working")
+//     let p = document.createElement("p")
+//     p.innerText = "Hello"
+//     e.target.append(p)
+// }
 
 function createLoader(){
     let divLoader = document.querySelector(".loader")
