@@ -1,22 +1,6 @@
 
     let divLoader = document.querySelector(".loader")
     console.log(divLoader)
-//'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6'
-createLoader()
-// fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-01-01&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6")
-// .then(response =>{
-//     if(response.status >= 200 && response.status <= 299)
-//     {
-//         response.json();
-//     }else
-//     {
-//         alert(`Please refresh or comeback later, NASA API down!!! ${response.statusText}`)
-//     }
-// })
-// .then( data =>{
-//     console.log(data)
-// })
-
 fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-01-01&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6")
 .then(response =>{
     if(response.status >= 200 && response.status <= 299)
