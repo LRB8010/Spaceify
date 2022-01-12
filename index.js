@@ -83,14 +83,6 @@ function likeIncrease(event){
     }
 }
 
-
-// function createTags(e){
-//     console.log("Working")
-//     let p = document.createElement("p")
-//     p.innerText = "Hello"
-//     e.target.append(p)
-// }
-
 function createLoader(){
     let divLoader = document.querySelector(".loader")
     console.log(divLoader)
