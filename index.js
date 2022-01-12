@@ -1,6 +1,7 @@
 
     let divLoader = document.querySelector(".loader")
     console.log(divLoader)
+    createLoader()
 fetch("https://api.nasa.gov/planetary/apod?start_date=2021-12-02&end_date=2022-01-01&api_key=98Jn5EfwNiD6OHjI3IbxZYofdV1mTsqzYf4BySV6")
 .then(response =>{
     if(response.status >= 200 && response.status <= 299)
@@ -82,6 +83,7 @@ function likeIncrease(event){
     numberLike.innerText = parseInt(numberLike.innerText) + 1
     }
 }
+
 
 function createLoader(){
     let divLoader = document.querySelector(".loader")
